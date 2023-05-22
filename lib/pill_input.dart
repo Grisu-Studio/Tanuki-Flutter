@@ -43,7 +43,7 @@ class _PillInputState extends State<PillInput> {
       ));
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Pill added')),
+        const SnackBar(content: Text('Pill added')),
       );
     }
   }
@@ -51,14 +51,14 @@ class _PillInputState extends State<PillInput> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             TextFormField(
-              decoration: InputDecoration(labelText: 'Pill Name'),
+              decoration: const InputDecoration(labelText: 'Pill Name'),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a pill name';
@@ -67,20 +67,20 @@ class _PillInputState extends State<PillInput> {
               },
               onSaved: (value) => _pillName = value!,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             GestureDetector(
               onTap: () => _selectTime(context),
               child: AbsorbPointer(
                 child: TextFormField(
                   controller: TextEditingController(
-                      text: '${_pillTime.format(context)}'),
-                  decoration: InputDecoration(labelText: 'Pill Time'),
+                      text: _pillTime.format(context)),
+                  decoration: const InputDecoration(labelText: 'Pill Time'),
                 ),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Frequency (in hours)'),
+              decoration: const InputDecoration(labelText: 'Frequency (in hours)'),
               keyboardType: TextInputType.number,
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -90,10 +90,10 @@ class _PillInputState extends State<PillInput> {
               },
               onSaved: (value) => _pillFrequency = int.parse(value!),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _submitForm,
-              child: Text('Add Pill'),
+              child: const Text('Add Pill'),
             ),
           ],
         ),

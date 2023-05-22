@@ -4,7 +4,7 @@ import 'models.dart';
 class PillList extends StatelessWidget {
   final List<Pill> pills;
 
-  PillList({Key? key, required this.pills}) : super(key: key);
+  const PillList({Key? key, required this.pills}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pills Management App',
+      title: 'Tanuki',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
-      home: MyHomePage(title: 'Pills Management App'),
+      home: MyHomePage(title: 'Tanuki'),
     );
   }
 }
